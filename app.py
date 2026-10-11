@@ -125,10 +125,83 @@ c2.metric("Matching filters", f"{len(view):,}")
 c3.metric("Documented pairs", int(ranked.is_documented.astype(bool).sum()))
 c4.metric("Design classes", ranked.design_class.nunique())
 
-tabs = st.tabs(["Ranked pairs", "Pair detail", "By indication", "Validation", "Figures", "Report"])
+tabs = st.tabs(["⭐ Start here", "Ranked pairs", "Pair detail", "By indication",
+                "Validation", "Figures", "Report"])
+
+# ----------------------------------------------------------------- story
+with tabs[0]:
+    st.markdown("### What problem is this solving?")
+    st.markdown(
+        "A **bispecific antibody** is a drug with two arms. One arm grabs a **cancer cell**, "
+        "the other grabs a **T-cell** — physically dragging the immune system onto the tumour. "
+        "Several are approved drugs today.\n\n"
+        "The catch: about **3,000 human proteins** sit on the cell surface where an antibody "
+        "can reach them, which makes **millions of possible two-target combinations**. "
+        "Which pair deserves years of laboratory work?\n\n"
+        "Two requirements decide it, and they pull against each other:"
+    )
+    a, b = st.columns(2)
+    a.success("**It works** if both targets are on the tumour — ideally on the *same* tumour cell.")
+    b.error("**It is unsafe** if healthy tissue also carries both, because the drug attacks that too.")
+
+    for img, cap in [
+        ("story_pipeline.png", None),
+        ("story_same_cell.png",
+         "Averaged expression data cannot tell these two tumours apart — only "
+         "cell-by-cell measurement can, and it decides whether the antibody can physically work."),
+    ]:
+        p = FIGURES / img
+        if p.exists():
+            st.image(str(p), width='stretch')
+            if cap:
+                st.caption(cap)
+
+    st.markdown("---")
+    st.markdown("### Does it actually find real drugs?")
+    st.markdown(
+        "The honest test: hide nothing, and check whether the method rediscovers bispecifics "
+        "that already exist. **BCMA** is the clearest case — the target of *teclistamab*, an "
+        "approved myeloma drug."
+    )
+    m1, m2, m3 = st.columns(3)
+    m1.metric("BCMA in myeloma", "rank 1", "found without being told")
+    m2.metric("Present in myeloma samples", "100%", "vs ~0% in other cancers")
+    m3.metric("Healthy tissue carrying it", "plasma cells", "a lineage patients survive losing")
+    for img in ("story_example_tumour.png", "story_example_normal.png"):
+        p = FIGURES / img
+        if p.exists():
+            st.image(str(p), width='stretch')
+    st.markdown(
+        "That second chart is the whole argument. BCMA *does* have high expression in healthy "
+        "plasma cells — but plasma-cell depletion is survivable, so the drug is viable. "
+        "**A naive filter that just removed targets with high normal expression would have "
+        "thrown BCMA away.** Which lineage carries it matters more than how much."
+    )
+
+    st.markdown("---")
+    st.markdown("### Did machine learning help?")
+    p = FIGURES / "story_scoreboard.png"
+    if p.exists():
+        st.image(str(p), width='stretch')
+    st.markdown(
+        "No — and reporting that is the point. Only **64 bispecific pairs** are publicly known, "
+        "and **48 of them share CD3** as one arm. That is not enough data to learn from: the "
+        "LightGBM model scored 0.57 on a fair test, and **0.43 — worse than guessing** — when "
+        "asked about a kind of pair it had never seen. The transparent rubric, whose weights are "
+        "written down and can be argued with, beat it."
+    )
+    st.info(
+        "**The idea that makes the method work:** the two arms of a bispecific are *not "
+        "interchangeable*. In a T-cell engager the tumour arm should be on the tumour, but the "
+        "CD3 arm is *meant* to be on T-cells and absent from it. An earlier version of this "
+        "project scored every pair the same way and came out **below chance (0.43)** — it was "
+        "penalising exactly the bispecifics that work in real medicine. Splitting the scoring "
+        "by design type fixed it."
+    )
+    st.caption(CAVEAT)
 
 # ----------------------------------------------------------------- ranked
-with tabs[0]:
+with tabs[1]:
     st.subheader("Ranked pairs")
     st.markdown(
         "Scores are percentiles **within design class** — a TAA×effector pair at 0.9 is "
@@ -143,7 +216,7 @@ with tabs[0]:
                         "and_gate_gain"] if c in view.columns]
     st.dataframe(
         view.sort_values("score", ascending=False)[cols].head(1000),
-        use_container_width=True, hide_index=True,
+        width='stretch', hide_index=True,
         column_config={
             "score": st.column_config.ProgressColumn("score", min_value=0, max_value=1,
                                                      format="%.3f"),
@@ -160,7 +233,7 @@ with tabs[0]:
                        "filtered_pairs.csv", "text/csv")
 
 # ----------------------------------------------------------------- detail
-with tabs[1]:
+with tabs[2]:
     st.subheader("Pair detail")
     if view.empty:
         st.info("No pairs match the current filters.")
@@ -200,7 +273,7 @@ with tabs[1]:
                         st.dataframe(
                             pd.DataFrame({"component": list(comp), "percentile": list(comp.values())})
                             .sort_values("percentile", ascending=False),
-                            hide_index=True, use_container_width=True)
+                            hide_index=True, width='stretch')
                 with right:
                     st.markdown("**Normal lineages expressing both** (AND-gate liability)")
                     shared = ev["safety"].get("shared_normal_cell_types") or []
@@ -208,12 +281,12 @@ with tabs[1]:
                         st.dataframe(pd.DataFrame(
                             shared, columns=["normal cell type", f"{ev['gene_a']} nCPM",
                                              f"{ev['gene_b']} nCPM"]),
-                            hide_index=True, use_container_width=True)
+                            hide_index=True, width='stretch')
                     else:
                         st.success("No normal cell type expresses both appreciably.")
 
 # ----------------------------------------------------------------- indication
-with tabs[2]:
+with tabs[3]:
     st.subheader("Per-indication target shortlists")
     by_ind = load_csv("targets_by_indication.csv")
     if by_ind.empty:
@@ -236,17 +309,17 @@ with tabs[2]:
             )
         pick = st.selectbox("Cancer type", sorted(by_ind.cancer_type.unique()))
         st.dataframe(by_ind[by_ind.cancer_type == pick].drop(columns=["cancer_type"]),
-                     hide_index=True, use_container_width=True)
+                     hide_index=True, width='stretch')
 
 # ----------------------------------------------------------------- validation
-with tabs[3]:
+with tabs[4]:
     st.subheader("Does any of this work?")
     rv = load_csv("rubric_validation.csv")
     if not rv.empty:
         st.markdown("**Rubric vs documented pairs.** Enrichment is the ratio to the "
                     "chance rate; ROC-AUC is an upper bound because most 'negatives' "
                     "are untried rather than rejected pairs.")
-        st.dataframe(rv, hide_index=True, use_container_width=True)
+        st.dataframe(rv, hide_index=True, width='stretch')
         tt = rv[rv.group.astype(str).str.contains(r"TAA\|TAA \[")]
         if len(tt) >= 2:
             st.info(
@@ -261,30 +334,30 @@ with tabs[3]:
         st.markdown("**Supervised model under three evaluation protocols.** The random "
                     "k-fold row is included to show how much arm leakage inflates the "
                     "headline — it is not a result.")
-        st.dataframe(cv, hide_index=True, use_container_width=True)
+        st.dataframe(cv, hide_index=True, width='stretch')
     pb = load_csv("prior_benchmark.csv")
     if not pb.empty:
         st.markdown("**Do hand-built expression priors beat chance at finding real "
                     "targets?** Mostly no — `enrich@k` near or below 1.0 means no "
                     "information. This is why the candidate universe stays permissive.")
-        st.dataframe(pb, hide_index=True, use_container_width=True)
+        st.dataframe(pb, hide_index=True, width='stretch')
     sf = load_csv("surface_filter_audit.csv")
     if not sf.empty:
         st.markdown("**Antibody-reachability filter, audited against validated targets.**")
-        st.dataframe(sf, hide_index=True, use_container_width=True)
+        st.dataframe(sf, hide_index=True, width='stretch')
 
 # ----------------------------------------------------------------- figures
-with tabs[4]:
+with tabs[5]:
     st.subheader("Figures")
-    pngs = sorted(FIGURES.glob("*.png"))
+    pngs = [p for p in sorted(FIGURES.glob("*.png")) if not p.name.startswith("story_")]
     if not pngs:
         st.info("No figures yet — they are written at the end of `run.py`.")
     for p in pngs:
-        st.image(str(p), use_column_width=True)
+        st.image(str(p), width='stretch')
         st.caption(p.stem.replace("_", " "))
 
 # ----------------------------------------------------------------- report
-with tabs[5]:
+with tabs[6]:
     st.subheader("Report")
     rp = RESULTS / "report.md"
     if rp.exists():
