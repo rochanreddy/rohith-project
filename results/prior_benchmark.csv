@@ -1,0 +1,5 @@
+prior,recall@300,enrich@300,recall@600,enrich@600,recall@1200,enrich@1200,median_rank,n_taa,n_known
+prevalence,0.07,0.71,0.07,0.36,0.302,0.77,1761,3067,43
+low_normal_expression,0.047,0.48,0.163,0.83,0.326,0.83,1569,3067,43
+therapeutic_window,0.186,1.9,0.326,1.66,0.581,1.49,1101,3067,43
+window_plus_prevalence,0.186,1.9,0.233,1.19,0.512,1.31,1137,3067,43

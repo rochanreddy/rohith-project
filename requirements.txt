@@ -1,0 +1,14 @@
+numpy>=1.26
+pandas>=2.2
+pyarrow>=15
+scipy>=1.11
+scikit-learn>=1.4
+lightgbm>=4.3
+anndata>=0.10
+matplotlib>=3.8
+tabulate>=0.9
+streamlit>=1.60      # the browsable UI in app.py
+pytest>=8.0          # tests/
+# Optional, only for `run.py --llm` explanation rewriting:
+# openai>=1.40
+# anthropic>=0.40

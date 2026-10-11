@@ -1,0 +1,26 @@
+cancer_type,shortlisted,known_recovered,known_genes
+lymphoma,15,2,"MS4A1, CD19"
+myeloma,15,1,TNFRSF17
+prostate_cancer,15,1,KLK2
+bladder_cancer,15,0,
+breast_cancer,15,0,
+cervical_cancer,15,0,
+bone_cancer,15,0,
+brain_cancer,15,0,
+bile_duct_cancer,15,0,
+gastric_cancer,15,0,
+esophageal_cancer,15,0,
+colorectal_cancer,15,0,
+head_and_neck_cancer,15,0,
+liver_cancer,15,0,
+leukemia,15,0,
+lung_cancer,15,0,
+kidney_cancer,15,0,
+neuroblastoma,15,0,
+ovarian_cancer,15,0,
+pancreatic_cancer,15,0,
+rhabdoid,15,0,
+sarcoma,15,0,
+skin_cancer,15,0,
+thyroid_cancer,15,0,
+uterine_cancer,15,0,

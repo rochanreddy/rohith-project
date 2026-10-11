@@ -1,0 +1,6 @@
+dataset,disease,malignant_cells,other_cells,universe_genes_present
+bladder_SCBO8,urinary bladder cancer,10946,0,2575
+breast_HTAPP895,breast cancer,6913,3045,2836
+colorectal_kg146,colorectal cancer,3351,0,3060
+dlbcl,diffuse large B-cell lymphoma,24760,14953,2972
+glioblastoma,glioblastoma,1091,2498,3057

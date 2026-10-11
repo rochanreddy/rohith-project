@@ -1,0 +1,17 @@
+# Downloaded source data (~2.5 GB) - rebuild with scripts/download_data.py
+data/raw/
+
+# Cached intermediate stages - rebuilt by run.py
+data/processed/
+
+# Large generated output; the CSVs beside it are the readable form
+results/ranked_pairs_full.parquet
+
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Large regenerable result files (recreate with: python run.py)
+results/ranked_pairs.csv

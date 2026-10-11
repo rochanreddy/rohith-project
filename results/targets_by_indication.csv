@@ -1,0 +1,376 @@
+rank,cancer_type,gene,tumour_positivity,tumour_mean_ntpm,normal_peak_ncpm,normal_peak_cell_type,normal_vital_max_log,normal_breadth,surface_confidence,in_known_bsab,indication_score
+1,bile_duct_cancer,EFNA4,1.0,24.714,2.2,microglia,0.993,0.0,high,False,1.059
+2,bile_duct_cancer,NOTCH2NLA,0.857,45.729,23.1,tuft cells,0.405,0.006,medium,False,0.926
+3,bile_duct_cancer,TMEM251,0.857,28.3,2.4,medullary thymic epithelial cells,0.405,0.0,medium,False,0.914
+4,bile_duct_cancer,HOMER3,0.857,59.743,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.798
+5,bile_duct_cancer,PPP3R1,1.0,41.4,24.7,megakaryocytes,2.208,0.019,medium,False,0.765
+6,bile_duct_cancer,DMWD,1.0,29.386,44.8,late spermatids,2.128,0.032,medium,False,0.754
+7,bile_duct_cancer,LIF,1.0,106.1,370.1,endometrial secretory cells,1.946,0.149,medium,False,0.723
+8,bile_duct_cancer,CTSD,1.0,590.157,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.705
+9,bile_duct_cancer,RAB13,1.0,145.414,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.687
+10,bile_duct_cancer,TWF2,1.0,55.586,63.0,early spermatids,2.773,0.052,medium,False,0.656
+11,bile_duct_cancer,PSMD9,1.0,30.714,38.2,gastric chief cells,2.773,0.052,medium,False,0.635
+12,bile_duct_cancer,PPP1R18,0.714,30.1,43.3,microglia,1.435,0.013,medium,False,0.597
+13,bile_duct_cancer,SLC43A3,0.857,46.571,11.4,erythrocyte progenitors,2.518,0.006,medium,False,0.588
+14,bile_duct_cancer,ZYX,1.0,82.371,37.1,megakaryocytes,3.211,0.11,medium,False,0.547
+15,bile_duct_cancer,TNFSF13,0.857,24.1,27.8,astrocytes,3.36,0.013,high,False,0.524
+1,bladder_cancer,NOTCH2NLA,0.962,26.5,23.1,tuft cells,0.405,0.006,medium,False,1.011
+2,bladder_cancer,HOMER3,1.0,73.873,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.949
+3,bladder_cancer,PPP1R18,0.962,44.131,43.3,microglia,1.435,0.013,medium,False,0.858
+4,bladder_cancer,PPP3R1,1.0,40.423,24.7,megakaryocytes,2.208,0.019,medium,False,0.764
+5,bladder_cancer,DMWD,1.0,26.719,44.8,late spermatids,2.128,0.032,medium,False,0.75
+6,bladder_cancer,CTSD,1.0,708.604,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.712
+7,bladder_cancer,TWF2,1.0,64.042,63.0,early spermatids,2.773,0.052,medium,False,0.661
+8,bladder_cancer,USP21,1.0,22.962,13.1,fallopian tube ciliated cells,2.588,0.052,medium,False,0.654
+9,bladder_cancer,RAB13,0.962,147.715,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.65
+10,bladder_cancer,PSMD9,0.962,44.804,38.2,gastric chief cells,2.773,0.052,medium,False,0.61
+11,bladder_cancer,ULBP2,0.731,21.923,44.2,ocular epithelial cells,1.974,0.039,high,False,0.593
+12,bladder_cancer,HAUS7,0.962,27.596,37.9,oligodendrocyte progenitor cells,3.186,0.019,medium,False,0.556
+13,bladder_cancer,ZYX,1.0,70.296,37.1,megakaryocytes,3.211,0.11,medium,False,0.541
+14,bladder_cancer,LIF,0.808,54.277,370.1,endometrial secretory cells,1.946,0.149,medium,False,0.507
+15,bladder_cancer,SCRIB,1.0,51.762,38.8,astrocytes,3.684,0.084,medium,False,0.478
+1,bone_cancer,NOTCH2NLA,1.0,28.581,23.1,tuft cells,0.405,0.006,medium,False,1.052
+2,bone_cancer,HOMER3,0.905,46.138,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.837
+3,bone_cancer,PPP1R18,0.905,33.057,43.3,microglia,1.435,0.013,medium,False,0.791
+4,bone_cancer,PPP3R1,1.0,51.633,24.7,megakaryocytes,2.208,0.019,medium,False,0.773
+5,bone_cancer,DMWD,1.0,26.757,44.8,late spermatids,2.128,0.032,medium,False,0.751
+6,bone_cancer,MFAP2,0.762,46.605,3.1,extravillous trophoblasts,1.224,0.0,medium,False,0.706
+7,bone_cancer,RAB13,1.0,157.1,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.69
+8,bone_cancer,CTSD,1.0,237.5,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.672
+9,bone_cancer,PRAME,0.667,56.467,41.1,differentiating spermatogonia,0.833,0.019,medium,False,0.662
+10,bone_cancer,TWF2,1.0,46.981,63.0,early spermatids,2.773,0.052,medium,False,0.65
+11,bone_cancer,PSMD9,1.0,45.314,38.2,gastric chief cells,2.773,0.052,medium,False,0.648
+12,bone_cancer,ARHGAP19,0.762,23.838,4.6,oocytes,1.526,0.0,medium,False,0.634
+13,bone_cancer,CD248,0.571,137.043,442.9,decidual stromal cells,1.065,0.065,high,False,0.621
+14,bone_cancer,USP21,0.952,28.724,13.1,fallopian tube ciliated cells,2.588,0.052,medium,False,0.614
+15,bone_cancer,SLC43A3,0.857,68.195,11.4,erythrocyte progenitors,2.518,0.006,medium,False,0.602
+1,brain_cancer,NOTCH2NLA,0.925,26.648,23.1,tuft cells,0.405,0.006,medium,False,0.974
+2,brain_cancer,HOMER3,1.0,79.972,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.952
+3,brain_cancer,PPP1R18,0.988,55.55,43.3,microglia,1.435,0.013,medium,False,0.892
+4,brain_cancer,FLCN,0.975,26.518,15.7,late spermatids,1.808,0.006,medium,False,0.8
+5,brain_cancer,S100A3,0.7,20.985,0.7,decidual stromal cells,0.182,0.0,medium,False,0.783
+6,brain_cancer,PPP3R1,1.0,43.282,24.7,megakaryocytes,2.208,0.019,medium,False,0.766
+7,brain_cancer,DMWD,1.0,33.344,44.8,late spermatids,2.128,0.032,medium,False,0.758
+8,brain_cancer,CTSD,1.0,769.681,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.715
+9,brain_cancer,RAB13,1.0,214.393,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.701
+10,brain_cancer,TWF2,1.0,67.16,63.0,early spermatids,2.773,0.052,medium,False,0.662
+11,brain_cancer,ULBP2,0.788,23.42,44.2,ocular epithelial cells,1.974,0.039,high,False,0.652
+12,brain_cancer,PSMD9,1.0,49.469,38.2,gastric chief cells,2.773,0.052,medium,False,0.652
+13,brain_cancer,ITGB3,0.475,20.358,76.0,platelets,0.262,0.013,high,False,0.632
+14,brain_cancer,HAUS7,0.988,25.933,37.9,oligodendrocyte progenitor cells,3.186,0.019,medium,False,0.579
+15,brain_cancer,SLC43A3,0.825,65.21,11.4,erythrocyte progenitors,2.518,0.006,medium,False,0.568
+1,breast_cancer,NOTCH2NLA,0.887,29.547,23.1,tuft cells,0.405,0.006,medium,False,0.94
+2,breast_cancer,HOMER3,0.984,71.06,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.931
+3,breast_cancer,EFNA4,0.806,28.039,2.2,microglia,0.993,0.0,high,False,0.869
+4,breast_cancer,PPP3R1,1.0,51.761,24.7,megakaryocytes,2.208,0.019,medium,False,0.773
+5,breast_cancer,DMWD,0.984,24.971,44.8,late spermatids,2.128,0.032,medium,False,0.732
+6,breast_cancer,CTSD,1.0,845.492,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.718
+7,breast_cancer,RAB13,1.0,204.065,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.7
+8,breast_cancer,TWF2,1.0,50.342,63.0,early spermatids,2.773,0.052,medium,False,0.652
+9,breast_cancer,USP21,0.984,26.203,13.1,fallopian tube ciliated cells,2.588,0.052,medium,False,0.643
+10,breast_cancer,PSMD9,0.984,34.969,38.2,gastric chief cells,2.773,0.052,medium,False,0.623
+11,breast_cancer,HAUS7,0.952,29.382,37.9,oligodendrocyte progenitor cells,3.186,0.019,medium,False,0.548
+12,breast_cancer,ZYX,0.968,55.408,37.1,megakaryocytes,3.211,0.11,medium,False,0.501
+13,breast_cancer,PPP1R18,0.613,25.706,43.3,microglia,1.435,0.013,medium,False,0.49
+14,breast_cancer,SCRIB,1.0,58.031,38.8,astrocytes,3.684,0.084,medium,False,0.482
+15,breast_cancer,ABCB6,0.774,23.174,21.2,other brain neurons,3.1,0.045,high,False,0.453
+1,cervical_cancer,ANKRD13B,0.875,23.238,3.0,late spermatids,0.262,0.0,medium,False,0.948
+2,cervical_cancer,HOMER3,1.0,41.738,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.928
+3,cervical_cancer,NOTCH2NLA,0.875,20.175,23.1,tuft cells,0.405,0.006,medium,False,0.915
+4,cervical_cancer,PPP3R1,1.0,47.288,24.7,megakaryocytes,2.208,0.019,medium,False,0.769
+5,cervical_cancer,DMWD,1.0,33.325,44.8,late spermatids,2.128,0.032,medium,False,0.758
+6,cervical_cancer,CTSD,1.0,242.537,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.673
+7,cervical_cancer,PSMD9,1.0,57.238,38.2,gastric chief cells,2.773,0.052,medium,False,0.657
+8,cervical_cancer,USP21,1.0,20.0,13.1,fallopian tube ciliated cells,2.588,0.052,medium,False,0.649
+9,cervical_cancer,TWF2,1.0,42.2,63.0,early spermatids,2.773,0.052,medium,False,0.646
+10,cervical_cancer,PPP1R18,0.75,30.163,43.3,microglia,1.435,0.013,medium,False,0.633
+11,cervical_cancer,ZNF503,0.625,32.875,2.2,gastric chief cells,0.833,0.0,medium,False,0.619
+12,cervical_cancer,RAB13,0.875,102.688,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.55
+13,cervical_cancer,ZYX,1.0,83.688,37.1,megakaryocytes,3.211,0.11,medium,False,0.548
+14,cervical_cancer,RAET1G,0.625,23.662,78.0,esophageal suprabasal cells,1.649,0.039,high,False,0.542
+15,cervical_cancer,DHRS4L2,1.0,30.037,27.0,proximal tubule cells,3.332,0.058,medium,False,0.539
+1,colorectal_cancer,EFNA4,0.968,26.816,2.2,microglia,0.993,0.0,high,False,1.03
+2,colorectal_cancer,PPP3R1,1.0,48.981,24.7,megakaryocytes,2.208,0.019,medium,False,0.771
+3,colorectal_cancer,DMWD,0.984,20.333,44.8,late spermatids,2.128,0.032,medium,False,0.725
+4,colorectal_cancer,CTSD,1.0,410.571,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.692
+5,colorectal_cancer,RAB13,1.0,108.979,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.677
+6,colorectal_cancer,USP21,1.0,22.092,13.1,fallopian tube ciliated cells,2.588,0.052,medium,False,0.653
+7,colorectal_cancer,TWF2,1.0,49.387,63.0,early spermatids,2.773,0.052,medium,False,0.651
+8,colorectal_cancer,PSMD9,0.984,40.708,38.2,gastric chief cells,2.773,0.052,medium,False,0.629
+9,colorectal_cancer,HOMER3,0.714,22.029,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.62
+10,colorectal_cancer,HAUS7,0.952,29.111,37.9,oligodendrocyte progenitor cells,3.186,0.019,medium,False,0.548
+11,colorectal_cancer,LIF,0.857,42.8,370.1,endometrial secretory cells,1.946,0.149,medium,False,0.548
+12,colorectal_cancer,ZYX,1.0,62.544,37.1,megakaryocytes,3.211,0.11,medium,False,0.537
+13,colorectal_cancer,SCRIB,1.0,49.727,38.8,astrocytes,3.684,0.084,medium,False,0.477
+14,colorectal_cancer,DHRS4L2,0.921,40.446,27.0,proximal tubule cells,3.332,0.058,medium,False,0.47
+15,colorectal_cancer,RPL36A-HNRNPH2,1.0,613.044,213.8,epicardial cells,3.804,0.188,medium,False,0.454
+1,esophageal_cancer,NOTCH2NLA,0.926,20.541,23.1,tuft cells,0.405,0.006,medium,False,0.966
+2,esophageal_cancer,HOMER3,0.963,47.963,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.896
+3,esophageal_cancer,PPP3R1,1.0,46.559,24.7,megakaryocytes,2.208,0.019,medium,False,0.769
+4,esophageal_cancer,CTSD,1.0,344.541,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.686
+5,esophageal_cancer,RAB13,1.0,110.622,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.678
+6,esophageal_cancer,USP21,0.963,21.222,13.1,fallopian tube ciliated cells,2.588,0.052,medium,False,0.614
+7,esophageal_cancer,TWF2,0.963,32.681,63.0,early spermatids,2.773,0.052,medium,False,0.6
+8,esophageal_cancer,ARTN,0.778,47.559,16.0,ocular epithelial cells,1.841,0.032,medium,False,0.595
+9,esophageal_cancer,PSMD9,0.889,29.237,38.2,gastric chief cells,2.773,0.052,medium,False,0.522
+10,esophageal_cancer,MFAP2,0.593,24.337,3.1,extravillous trophoblasts,1.224,0.0,medium,False,0.514
+11,esophageal_cancer,HAUS7,0.926,23.074,37.9,oligodendrocyte progenitor cells,3.186,0.019,medium,False,0.514
+12,esophageal_cancer,SLC16A1,0.963,77.544,57.6,late spermatids,3.666,0.175,high,False,0.476
+13,esophageal_cancer,SCRIB,1.0,40.619,38.8,astrocytes,3.684,0.084,medium,False,0.47
+14,esophageal_cancer,GPX1,1.0,197.015,273.3,platelets,3.963,0.11,medium,False,0.458
+15,esophageal_cancer,RPL36A-HNRNPH2,1.0,546.67,213.8,epicardial cells,3.804,0.188,medium,False,0.45
+1,gastric_cancer,NOTCH2NLA,0.786,21.886,23.1,tuft cells,0.405,0.006,medium,False,0.828
+2,gastric_cancer,PPP3R1,1.0,52.545,24.7,megakaryocytes,2.208,0.019,medium,False,0.773
+3,gastric_cancer,DMWD,1.0,26.912,44.8,late spermatids,2.128,0.032,medium,False,0.751
+4,gastric_cancer,FLCN,0.881,21.669,15.7,late spermatids,1.808,0.006,medium,False,0.699
+5,gastric_cancer,CTSD,1.0,400.912,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.691
+6,gastric_cancer,RAB13,0.976,101.857,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.651
+7,gastric_cancer,TWF2,1.0,47.24,63.0,early spermatids,2.773,0.052,medium,False,0.65
+8,gastric_cancer,USP21,0.976,21.19,13.1,fallopian tube ciliated cells,2.588,0.052,medium,False,0.628
+9,gastric_cancer,PSMD9,0.976,43.624,38.2,gastric chief cells,2.773,0.052,medium,False,0.623
+10,gastric_cancer,ZNF503,0.643,20.579,2.2,gastric chief cells,0.833,0.0,medium,False,0.621
+11,gastric_cancer,HOMER3,0.69,35.693,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.613
+12,gastric_cancer,HAUS7,0.952,26.855,37.9,oligodendrocyte progenitor cells,3.186,0.019,medium,False,0.545
+13,gastric_cancer,SLC16A1,1.0,78.179,57.6,late spermatids,3.666,0.175,high,False,0.514
+14,gastric_cancer,ZYX,0.952,54.35,37.1,megakaryocytes,3.211,0.11,medium,False,0.485
+15,gastric_cancer,SCRIB,1.0,58.636,38.8,astrocytes,3.684,0.084,medium,False,0.483
+1,head_and_neck_cancer,NOTCH2NLA,0.947,34.529,23.1,tuft cells,0.405,0.006,medium,False,1.006
+2,head_and_neck_cancer,HOMER3,1.0,79.424,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.951
+3,head_and_neck_cancer,PPP1R18,1.0,38.842,43.3,microglia,1.435,0.013,medium,False,0.892
+4,head_and_neck_cancer,ULBP2,0.895,30.005,44.2,ocular epithelial cells,1.974,0.039,high,False,0.768
+5,head_and_neck_cancer,PPP3R1,1.0,42.576,24.7,megakaryocytes,2.208,0.019,medium,False,0.766
+6,head_and_neck_cancer,ARTN,0.921,57.682,16.0,ocular epithelial cells,1.841,0.032,medium,False,0.745
+7,head_and_neck_cancer,DMWD,0.947,23.387,44.8,late spermatids,2.128,0.032,medium,False,0.693
+8,head_and_neck_cancer,CTSD,0.974,642.647,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.682
+9,head_and_neck_cancer,RAB13,1.0,119.782,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.68
+10,head_and_neck_cancer,MFAP2,0.711,42.634,3.1,extravillous trophoblasts,1.224,0.0,medium,False,0.651
+11,head_and_neck_cancer,TWF2,1.0,43.203,63.0,early spermatids,2.773,0.052,medium,False,0.647
+12,head_and_neck_cancer,PSMD9,1.0,40.392,38.2,gastric chief cells,2.773,0.052,medium,False,0.644
+13,head_and_neck_cancer,IL1A,0.842,136.337,356.5,urothelial cells,1.74,0.11,medium,False,0.642
+14,head_and_neck_cancer,SLC43A3,0.816,50.034,11.4,erythrocyte progenitors,2.518,0.006,medium,False,0.549
+15,head_and_neck_cancer,ZYX,1.0,52.961,37.1,megakaryocytes,3.211,0.11,medium,False,0.531
+1,kidney_cancer,ITGB3,0.914,98.974,76.0,platelets,0.262,0.013,high,False,1.127
+2,kidney_cancer,NOTCH2NLA,1.0,28.743,23.1,tuft cells,0.405,0.006,medium,False,1.052
+3,kidney_cancer,HOMER3,1.0,85.311,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.954
+4,kidney_cancer,PPP1R18,1.0,39.026,43.3,microglia,1.435,0.013,medium,False,0.892
+5,kidney_cancer,PRAME,0.829,28.194,41.1,differentiating spermatogonia,0.833,0.019,medium,False,0.8
+6,kidney_cancer,FLCN,0.971,22.857,15.7,late spermatids,1.808,0.006,medium,False,0.791
+7,kidney_cancer,CTSD,1.0,1428.271,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.737
+8,kidney_cancer,LIF,1.0,133.589,370.1,endometrial secretory cells,1.946,0.149,medium,False,0.732
+9,kidney_cancer,PPP3R1,0.971,36.154,24.7,megakaryocytes,2.208,0.019,medium,False,0.731
+10,kidney_cancer,DMWD,0.971,24.694,44.8,late spermatids,2.128,0.032,medium,False,0.719
+11,kidney_cancer,RAB13,1.0,210.954,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.701
+12,kidney_cancer,TWF2,1.0,70.491,63.0,early spermatids,2.773,0.052,medium,False,0.664
+13,kidney_cancer,PSMD9,1.0,45.034,38.2,gastric chief cells,2.773,0.052,medium,False,0.648
+14,kidney_cancer,ZYX,1.0,118.98,37.1,megakaryocytes,3.211,0.11,medium,False,0.56
+15,kidney_cancer,HAUS7,0.943,23.08,37.9,oligodendrocyte progenitor cells,3.186,0.019,medium,False,0.531
+1,leukemia,IL2RG,0.925,207.095,11.3,nk-cells,1.099,0.006,high,False,1.036
+2,leukemia,SPN,0.989,185.261,9.8,megakaryocyte progenitors,2.116,0.0,high,False,0.94
+3,leukemia,PPP1R18,1.0,92.045,43.3,microglia,1.435,0.013,medium,False,0.923
+4,leukemia,ARHGAP19,0.968,34.953,4.6,oocytes,1.526,0.0,medium,False,0.853
+5,leukemia,FAM72A,1.0,29.782,49.7,late primary spermatocytes,1.649,0.032,medium,False,0.831
+6,leukemia,PPP3R1,1.0,69.472,24.7,megakaryocytes,2.208,0.019,medium,False,0.783
+7,leukemia,SLC43A3,1.0,195.161,11.4,erythrocyte progenitors,2.518,0.006,medium,False,0.782
+8,leukemia,FAM72C,0.86,20.206,7.7,paneth cells,1.526,0.0,medium,False,0.727
+9,leukemia,FAM72B,0.989,28.56,32.1,late primary spermatocytes,2.313,0.052,medium,False,0.695
+10,leukemia,TWF2,1.0,89.006,63.0,early spermatids,2.773,0.052,medium,False,0.672
+11,leukemia,CTSD,1.0,188.525,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.664
+12,leukemia,USP21,1.0,30.212,13.1,fallopian tube ciliated cells,2.588,0.052,medium,False,0.664
+13,leukemia,CD79B,0.516,102.463,18.6,b-cells,0.916,0.006,high,False,0.632
+14,leukemia,PSMD9,0.989,33.909,38.2,gastric chief cells,2.773,0.052,medium,False,0.627
+15,leukemia,PTPRCAP,0.71,246.096,12.4,nk-cells,1.841,0.006,medium,False,0.609
+1,liver_cancer,NOTCH2NLA,0.875,29.029,23.1,tuft cells,0.405,0.006,medium,False,0.927
+2,liver_cancer,HOMER3,0.958,63.808,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.902
+3,liver_cancer,FLCN,0.958,30.987,15.7,late spermatids,1.808,0.006,medium,False,0.789
+4,liver_cancer,PPP3R1,1.0,47.379,24.7,megakaryocytes,2.208,0.019,medium,False,0.77
+5,liver_cancer,DMWD,1.0,32.871,44.8,late spermatids,2.128,0.032,medium,False,0.758
+6,liver_cancer,CTSD,1.0,658.346,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.709
+7,liver_cancer,RAB13,1.0,182.192,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.696
+8,liver_cancer,TWF2,1.0,55.383,63.0,early spermatids,2.773,0.052,medium,False,0.656
+9,liver_cancer,USP21,1.0,21.354,13.1,fallopian tube ciliated cells,2.588,0.052,medium,False,0.652
+10,liver_cancer,PSMD9,1.0,43.763,38.2,gastric chief cells,2.773,0.052,medium,False,0.647
+11,liver_cancer,PPP1R18,0.75,44.417,43.3,microglia,1.435,0.013,medium,False,0.647
+12,liver_cancer,S100A3,0.542,29.838,0.7,decidual stromal cells,0.182,0.0,medium,False,0.637
+13,liver_cancer,SNX15,0.958,23.217,17.6,bergmann glia,2.632,0.026,medium,False,0.629
+14,liver_cancer,HAUS7,1.0,28.696,37.9,oligodendrocyte progenitor cells,3.186,0.019,medium,False,0.595
+15,liver_cancer,GAGE12F,0.375,245.254,0.0,adipocytes,0.0,0.0,medium,False,0.574
+1,lung_cancer,PPP3R1,1.0,51.471,24.7,megakaryocytes,2.208,0.019,medium,False,0.772
+2,lung_cancer,NOTCH2NLA,0.716,22.344,23.1,tuft cells,0.405,0.006,medium,False,0.759
+3,lung_cancer,DMWD,0.991,28.304,44.8,late spermatids,2.128,0.032,medium,False,0.744
+4,lung_cancer,HOMER3,0.797,46.507,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.73
+5,lung_cancer,CTSD,1.0,417.666,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.693
+6,lung_cancer,RAB13,0.957,129.884,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.64
+7,lung_cancer,TWF2,0.991,44.672,63.0,early spermatids,2.773,0.052,medium,False,0.639
+8,lung_cancer,USP21,0.983,24.364,13.1,fallopian tube ciliated cells,2.588,0.052,medium,False,0.639
+9,lung_cancer,PSMD9,0.991,38.36,38.2,gastric chief cells,2.773,0.052,medium,False,0.634
+10,lung_cancer,PPP1R18,0.746,28.865,43.3,microglia,1.435,0.013,medium,False,0.627
+11,lung_cancer,HAUS7,0.974,29.018,37.9,oligodendrocyte progenitor cells,3.186,0.019,medium,False,0.57
+12,lung_cancer,SCRIB,1.0,49.782,38.8,astrocytes,3.684,0.084,medium,False,0.477
+13,lung_cancer,RPL36A-HNRNPH2,1.0,468.459,213.8,epicardial cells,3.804,0.188,medium,False,0.444
+14,lung_cancer,CDK5,0.991,38.819,45.8,hofbauer cells,2.976,0.24,medium,False,0.432
+15,lung_cancer,ZNG1C,1.0,64.85,30.5,enterocytes,3.45,0.188,medium,False,0.43
+1,lymphoma,CD79B,0.75,656.96,18.6,b-cells,0.916,0.006,high,False,0.932
+2,lymphoma,IL2RG,0.829,145.062,11.3,nk-cells,1.099,0.006,high,False,0.928
+3,lymphoma,PPP1R18,1.0,68.661,43.3,microglia,1.435,0.013,medium,False,0.912
+4,lymphoma,MS4A1,0.711,397.764,884.8,b-cells,0.993,0.032,high,True,0.839
+5,lymphoma,FAM72A,0.987,40.23,49.7,late primary spermatocytes,1.649,0.032,medium,False,0.828
+6,lymphoma,CD79A,0.75,867.041,686.7,plasma cells,1.361,0.058,high,False,0.824
+7,lymphoma,CD19,0.697,71.066,83.9,b-cells,0.642,0.032,high,True,0.82
+8,lymphoma,ARHGAP19,0.934,30.12,4.6,oocytes,1.526,0.0,medium,False,0.814
+9,lymphoma,P2RX5,0.789,68.001,1.7,b-cells,0.833,0.0,medium,False,0.809
+10,lymphoma,FAM72C,0.921,31.27,7.7,paneth cells,1.526,0.0,medium,False,0.803
+11,lymphoma,PTPRCAP,0.882,323.688,12.4,nk-cells,1.841,0.006,medium,False,0.791
+12,lymphoma,PPP3R1,1.0,83.13,24.7,megakaryocytes,2.208,0.019,medium,False,0.79
+13,lymphoma,DMWD,0.987,28.808,44.8,late spermatids,2.128,0.032,medium,False,0.74
+14,lymphoma,NOTCH2NLA,0.684,20.859,23.1,tuft cells,0.405,0.006,medium,False,0.725
+15,lymphoma,SLC43A3,0.947,152.73,11.4,erythrocyte progenitors,2.518,0.006,medium,False,0.721
+1,myeloma,TNFRSF17,1.0,607.991,566.5,plasma cells,0.788,0.045,medium,True,1.065
+2,myeloma,NOTCH2NLA,0.941,72.826,23.1,tuft cells,0.405,0.006,medium,False,1.026
+3,myeloma,IL2RG,0.853,354.859,11.3,nk-cells,1.099,0.006,high,False,0.984
+4,myeloma,CD79B,0.853,77.35,18.6,b-cells,0.916,0.006,high,False,0.958
+5,myeloma,P2RX5,0.882,38.912,1.7,b-cells,0.833,0.0,medium,False,0.882
+6,myeloma,IGLL5,0.735,1179.379,4048.5,plasma cells,0.531,0.032,medium,False,0.877
+7,myeloma,PPP1R18,0.971,34.25,43.3,microglia,1.435,0.013,medium,False,0.858
+8,myeloma,SLAMF7,0.882,188.268,395.3,plasma cells,1.099,0.084,medium,False,0.82
+9,myeloma,HOMER3,0.824,189.344,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.806
+10,myeloma,FAM72A,0.971,28.382,49.7,late primary spermatocytes,1.649,0.032,medium,False,0.8
+11,myeloma,ARHGAP19,0.912,20.947,4.6,oocytes,1.526,0.0,medium,False,0.779
+12,myeloma,PPP3R1,1.0,62.056,24.7,megakaryocytes,2.208,0.019,medium,False,0.779
+13,myeloma,FAM72C,0.882,30.562,7.7,paneth cells,1.526,0.0,medium,False,0.763
+14,myeloma,UTS2R,0.618,21.988,33.4,early primary spermatocytes,0.405,0.006,high,False,0.76
+15,myeloma,ITGB7,0.941,982.597,69.6,plasma cells,2.332,0.065,medium,False,0.759
+1,neuroblastoma,ANKRD13B,1.0,46.0,3.0,late spermatids,0.262,0.0,medium,False,1.097
+2,neuroblastoma,HOMER3,0.941,41.682,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.87
+3,neuroblastoma,PPP1R18,0.941,30.947,43.3,microglia,1.435,0.013,medium,False,0.825
+4,neuroblastoma,PPP3R1,1.0,56.453,24.7,megakaryocytes,2.208,0.019,medium,False,0.776
+5,neuroblastoma,CD248,0.765,39.782,442.9,decidual stromal cells,1.065,0.065,high,False,0.77
+6,neuroblastoma,DMWD,1.0,29.759,44.8,late spermatids,2.128,0.032,medium,False,0.754
+7,neuroblastoma,PRAME,0.706,95.106,41.1,differentiating spermatogonia,0.833,0.019,medium,False,0.72
+8,neuroblastoma,MFAP2,0.765,41.965,3.1,extravillous trophoblasts,1.224,0.0,medium,False,0.705
+9,neuroblastoma,MFAP4,0.882,110.635,590.2,fibroblasts,1.435,0.136,medium,False,0.701
+10,neuroblastoma,RAB13,1.0,106.147,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.676
+11,neuroblastoma,USP21,1.0,33.953,13.1,fallopian tube ciliated cells,2.588,0.052,medium,False,0.668
+12,neuroblastoma,TWF2,1.0,44.647,63.0,early spermatids,2.773,0.052,medium,False,0.648
+13,neuroblastoma,CTSD,1.0,94.229,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.639
+14,neuroblastoma,GJC1,1.0,37.829,192.9,pericytes,2.549,0.104,medium,False,0.631
+15,neuroblastoma,PSMD9,1.0,27.529,38.2,gastric chief cells,2.773,0.052,medium,False,0.631
+1,ovarian_cancer,HOMER3,0.983,54.02,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.921
+2,ovarian_cancer,NOTCH2NLA,0.814,25.998,23.1,tuft cells,0.405,0.006,medium,False,0.862
+3,ovarian_cancer,PPP3R1,1.0,50.354,24.7,megakaryocytes,2.208,0.019,medium,False,0.772
+4,ovarian_cancer,PPP1R18,0.831,32.783,43.3,microglia,1.435,0.013,medium,False,0.717
+5,ovarian_cancer,RAB13,1.0,213.592,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.701
+6,ovarian_cancer,DMWD,0.949,24.951,44.8,late spermatids,2.128,0.032,medium,False,0.697
+7,ovarian_cancer,CTSD,1.0,360.444,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.687
+8,ovarian_cancer,ITGB3,0.475,46.836,76.0,platelets,0.262,0.013,high,False,0.661
+9,ovarian_cancer,TWF2,1.0,63.758,63.0,early spermatids,2.773,0.052,medium,False,0.661
+10,ovarian_cancer,PRAME,0.661,43.617,41.1,differentiating spermatogonia,0.833,0.019,medium,False,0.648
+11,ovarian_cancer,PSMD9,1.0,37.537,38.2,gastric chief cells,2.773,0.052,medium,False,0.642
+12,ovarian_cancer,USP21,0.949,20.159,13.1,fallopian tube ciliated cells,2.588,0.052,medium,False,0.599
+13,ovarian_cancer,ZYX,1.0,90.608,37.1,megakaryocytes,3.211,0.11,medium,False,0.55
+14,ovarian_cancer,ZNF503,0.559,20.732,2.2,gastric chief cells,0.833,0.0,medium,False,0.537
+15,ovarian_cancer,HAUS7,0.915,25.976,37.9,oligodendrocyte progenitor cells,3.186,0.019,medium,False,0.507
+1,pancreatic_cancer,NOTCH2NLA,0.891,28.202,23.1,tuft cells,0.405,0.006,medium,False,0.943
+2,pancreatic_cancer,HOMER3,0.978,49.643,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.913
+3,pancreatic_cancer,PPP1R18,0.978,37.952,43.3,microglia,1.435,0.013,medium,False,0.869
+4,pancreatic_cancer,PPP3R1,1.0,47.585,24.7,megakaryocytes,2.208,0.019,medium,False,0.77
+5,pancreatic_cancer,DMWD,1.0,21.228,44.8,late spermatids,2.128,0.032,medium,False,0.742
+6,pancreatic_cancer,CTSD,1.0,685.65,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.711
+7,pancreatic_cancer,LIF,0.978,73.73,370.1,endometrial secretory cells,1.946,0.149,medium,False,0.689
+8,pancreatic_cancer,RAB13,1.0,127.654,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.683
+9,pancreatic_cancer,TWF2,1.0,70.417,63.0,early spermatids,2.773,0.052,medium,False,0.664
+10,pancreatic_cancer,USP21,0.978,20.052,13.1,fallopian tube ciliated cells,2.588,0.052,medium,False,0.628
+11,pancreatic_cancer,SNX15,0.957,20.863,17.6,bergmann glia,2.632,0.026,medium,False,0.624
+12,pancreatic_cancer,PSMD9,0.978,38.137,38.2,gastric chief cells,2.773,0.052,medium,False,0.621
+13,pancreatic_cancer,RAB43,0.891,20.717,19.7,microglia,2.442,0.026,medium,False,0.589
+14,pancreatic_cancer,ZYX,1.0,57.667,37.1,megakaryocytes,3.211,0.11,medium,False,0.534
+15,pancreatic_cancer,HAUS7,0.913,24.728,37.9,oligodendrocyte progenitor cells,3.186,0.019,medium,False,0.503
+1,prostate_cancer,PIGW,1.0,20.175,4.3,other brain neurons,1.668,0.0,high,False,0.944
+2,prostate_cancer,NOTCH2NLA,0.75,22.85,23.1,tuft cells,0.405,0.006,medium,False,0.794
+3,prostate_cancer,HOMER3,0.875,27.125,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.788
+4,prostate_cancer,PPP3R1,1.0,42.5,24.7,megakaryocytes,2.208,0.019,medium,False,0.766
+5,prostate_cancer,KLK3,0.625,2405.538,23233.5,prostatic glandular cells,0.875,0.058,medium,False,0.714
+6,prostate_cancer,KLK2,0.625,207.25,7044.4,prostatic glandular cells,0.47,0.052,medium,True,0.696
+7,prostate_cancer,RAB13,1.0,156.15,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.69
+8,prostate_cancer,CTSD,1.0,169.7,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.66
+9,prostate_cancer,USP21,1.0,25.8,13.1,fallopian tube ciliated cells,2.588,0.052,medium,False,0.658
+10,prostate_cancer,TWF2,1.0,47.512,63.0,early spermatids,2.773,0.052,medium,False,0.65
+11,prostate_cancer,PSMD9,1.0,39.212,38.2,gastric chief cells,2.773,0.052,medium,False,0.643
+12,prostate_cancer,KLK4,0.625,107.3,517.5,prostatic glandular cells,0.916,0.026,medium,False,0.625
+13,prostate_cancer,ZNF503,0.625,26.088,2.2,gastric chief cells,0.833,0.0,medium,False,0.611
+14,prostate_cancer,AMACR,1.0,77.3,24.7,hepatocytes,3.246,0.052,medium,False,0.592
+15,prostate_cancer,ABCB6,0.875,31.562,21.2,other brain neurons,3.1,0.045,high,False,0.564
+1,rhabdoid,ANKRD13B,0.929,26.629,3.0,late spermatids,0.262,0.0,medium,False,1.007
+2,rhabdoid,HOMER3,1.0,38.993,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.926
+3,rhabdoid,FLCN,1.0,26.5,15.7,late spermatids,1.808,0.006,medium,False,0.825
+4,rhabdoid,PPP1R18,0.929,34.5,43.3,microglia,1.435,0.013,medium,False,0.816
+5,rhabdoid,PPP3R1,1.0,64.35,24.7,megakaryocytes,2.208,0.019,medium,False,0.78
+6,rhabdoid,DMWD,1.0,29.014,44.8,late spermatids,2.128,0.032,medium,False,0.753
+7,rhabdoid,IGFL2,0.571,102.371,9.2,suprabasal keratinocytes,0.742,0.0,high,False,0.721
+8,rhabdoid,MMP10,0.643,128.807,628.4,endometrial secretory cells,0.916,0.071,high,False,0.708
+9,rhabdoid,RAB13,1.0,114.214,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.679
+10,rhabdoid,SLC5A3,0.714,31.893,5.2,pituicytes/fscs,1.649,0.0,high,False,0.677
+11,rhabdoid,TWF2,1.0,79.493,63.0,early spermatids,2.773,0.052,medium,False,0.668
+12,rhabdoid,USP21,1.0,25.243,13.1,fallopian tube ciliated cells,2.588,0.052,medium,False,0.657
+13,rhabdoid,PSMD9,1.0,58.2,38.2,gastric chief cells,2.773,0.052,medium,False,0.657
+14,rhabdoid,CTSD,1.0,151.086,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.656
+15,rhabdoid,PRAME,0.643,75.629,41.1,differentiating spermatogonia,0.833,0.019,medium,False,0.649
+1,sarcoma,NOTCH2NLA,1.0,36.927,23.1,tuft cells,0.405,0.006,medium,False,1.061
+2,sarcoma,HOMER3,1.0,81.52,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.952
+3,sarcoma,PPP1R18,1.0,54.9,43.3,microglia,1.435,0.013,medium,False,0.904
+4,sarcoma,FLCN,1.0,29.133,15.7,late spermatids,1.808,0.006,medium,False,0.828
+5,sarcoma,PPP3R1,1.0,51.347,24.7,megakaryocytes,2.208,0.019,medium,False,0.772
+6,sarcoma,DMWD,1.0,35.54,44.8,late spermatids,2.128,0.032,medium,False,0.76
+7,sarcoma,RAB13,1.0,219.313,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.702
+8,sarcoma,CTSD,1.0,282.073,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.679
+9,sarcoma,TWF2,1.0,78.08,63.0,early spermatids,2.773,0.052,medium,False,0.668
+10,sarcoma,PSMD9,1.0,45.653,38.2,gastric chief cells,2.773,0.052,medium,False,0.649
+11,sarcoma,SNX15,0.933,20.107,17.6,bergmann glia,2.632,0.026,medium,False,0.599
+12,sarcoma,HAUS7,1.0,29.453,37.9,oligodendrocyte progenitor cells,3.186,0.019,medium,False,0.596
+13,sarcoma,ZYX,1.0,101.493,37.1,megakaryocytes,3.211,0.11,medium,False,0.554
+14,sarcoma,GJC1,0.933,23.88,192.9,pericytes,2.549,0.104,medium,False,0.548
+15,sarcoma,PRAME,0.533,35.313,41.1,differentiating spermatogonia,0.833,0.019,medium,False,0.513
+1,skin_cancer,ITGB3,0.823,125.145,76.0,platelets,0.262,0.013,high,False,1.044
+2,skin_cancer,NOTCH2NLA,0.952,32.263,23.1,tuft cells,0.405,0.006,medium,False,1.008
+3,skin_cancer,PLEKHO2,0.919,29.003,4.3,retinal pigment epithelial cells,0.405,0.0,medium,False,0.978
+4,skin_cancer,HOMER3,1.0,57.173,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.94
+5,skin_cancer,PRAME,0.903,136.887,41.1,differentiating spermatogonia,0.833,0.019,medium,False,0.931
+6,skin_cancer,PPP1R18,1.0,47.834,43.3,microglia,1.435,0.013,medium,False,0.899
+7,skin_cancer,MC1R,0.903,49.565,9.4,renal collecting duct intercalated cells,2.067,0.0,high,False,0.814
+8,skin_cancer,PPP3R1,1.0,55.805,24.7,megakaryocytes,2.208,0.019,medium,False,0.775
+9,skin_cancer,SLC43A3,0.984,220.627,11.4,erythrocyte progenitors,2.518,0.006,medium,False,0.771
+10,skin_cancer,TEKTIP1,1.0,150.489,788.7,early spermatids,2.361,0.045,medium,False,0.763
+11,skin_cancer,FLCN,0.919,22.998,15.7,late spermatids,1.808,0.006,medium,False,0.739
+12,skin_cancer,DMWD,0.984,26.819,44.8,late spermatids,2.128,0.032,medium,False,0.734
+13,skin_cancer,CTSD,1.0,931.369,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.722
+14,skin_cancer,UCN2,0.774,119.218,5.5,schwann cells,1.435,0.0,medium,False,0.718
+15,skin_cancer,MIA,0.919,473.906,162.7,breast myoepithelial cells,2.116,0.097,medium,False,0.716
+1,thyroid_cancer,NOTCH2NLA,0.818,27.491,23.1,tuft cells,0.405,0.006,medium,False,0.869
+2,thyroid_cancer,HOMER3,0.909,72.845,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.857
+3,thyroid_cancer,PPP1R18,0.909,60.536,43.3,microglia,1.435,0.013,medium,False,0.817
+4,thyroid_cancer,ITGB3,0.636,36.482,76.0,platelets,0.262,0.013,high,False,0.814
+5,thyroid_cancer,PPP3R1,1.0,39.945,24.7,megakaryocytes,2.208,0.019,medium,False,0.763
+6,thyroid_cancer,DMWD,1.0,30.691,44.8,late spermatids,2.128,0.032,medium,False,0.755
+7,thyroid_cancer,CTSD,1.0,513.782,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.7
+8,thyroid_cancer,RAB13,1.0,175.645,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.694
+9,thyroid_cancer,USP21,1.0,21.045,13.1,fallopian tube ciliated cells,2.588,0.052,medium,False,0.651
+10,thyroid_cancer,SNX15,0.909,20.955,17.6,bergmann glia,2.632,0.026,medium,False,0.576
+11,thyroid_cancer,TWF2,0.909,65.2,63.0,early spermatids,2.773,0.052,medium,False,0.57
+12,thyroid_cancer,DHRS4L2,1.0,26.491,27.0,proximal tubule cells,3.332,0.058,medium,False,0.534
+13,thyroid_cancer,HAUS7,0.909,31.164,37.9,oligodendrocyte progenitor cells,3.186,0.019,medium,False,0.507
+14,thyroid_cancer,GPX1,1.0,360.654,273.3,platelets,3.963,0.11,medium,False,0.48
+15,thyroid_cancer,PSMD9,0.818,48.991,38.2,gastric chief cells,2.773,0.052,medium,False,0.469
+1,uterine_cancer,HOMER3,1.0,49.79,11.2,lymphatic endothelial cells,1.224,0.013,medium,False,0.935
+2,uterine_cancer,EFNA4,0.862,20.686,2.2,microglia,0.993,0.0,high,False,0.914
+3,uterine_cancer,NOTCH2NLA,0.828,22.221,23.1,tuft cells,0.405,0.006,medium,False,0.871
+4,uterine_cancer,PRAME,0.793,40.7,41.1,differentiating spermatogonia,0.833,0.019,medium,False,0.777
+5,uterine_cancer,PPP3R1,1.0,38.983,24.7,megakaryocytes,2.208,0.019,medium,False,0.763
+6,uterine_cancer,DMWD,1.0,24.886,44.8,late spermatids,2.128,0.032,medium,False,0.748
+7,uterine_cancer,PPP1R18,0.862,27.697,43.3,microglia,1.435,0.013,medium,False,0.742
+8,uterine_cancer,ITGB3,0.552,38.424,76.0,platelets,0.262,0.013,high,False,0.731
+9,uterine_cancer,RAB13,1.0,161.203,25.7,papillary tip epithelial cells,2.862,0.039,medium,False,0.691
+10,uterine_cancer,CTSD,1.0,300.728,55.4,retinal pigment epithelial cells,3.03,0.045,medium,False,0.681
+11,uterine_cancer,TWF2,1.0,57.983,63.0,early spermatids,2.773,0.052,medium,False,0.657
+12,uterine_cancer,PSMD9,1.0,38.828,38.2,gastric chief cells,2.773,0.052,medium,False,0.643
+13,uterine_cancer,USP21,0.966,20.586,13.1,fallopian tube ciliated cells,2.588,0.052,medium,False,0.616
+14,uterine_cancer,HAUS7,1.0,25.369,37.9,oligodendrocyte progenitor cells,3.186,0.019,medium,False,0.591
+15,uterine_cancer,ZYX,1.0,70.255,37.1,megakaryocytes,3.211,0.11,medium,False,0.541

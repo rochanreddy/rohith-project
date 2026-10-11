@@ -1,0 +1,4 @@
+n,n_pos,roc_auc,average_precision,recall@100,enrichment@100,recall@500,enrichment@500,recall@1000,enrichment@1000,recall@5000,enrichment@5000,setting
+169532,64,0.566,0.0068,0.047,79.47,0.156,52.98,0.203,34.44,0.359,12.19,arm-grouped CV
+166452,34,0.4341,0.0017,0.029,48.96,0.088,29.37,0.147,24.48,0.176,5.87,"arm-grouped CV, CD3E removed from training"
+169532,64,0.5185,0.0054,0.016,26.49,0.156,52.98,0.234,39.73,0.312,10.6,random k-fold (leaky - for contrast only)
