@@ -12,8 +12,14 @@ from __future__ import annotations
 
 from pathlib import Path
 
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
+
+from bsab.config import VITAL_CELL_TYPES as C_VITAL
+from bsab.report import BLUE, CRITICAL, GOOD, GRID, INK, INK_2, ORANGE
 
 ROOT = Path(__file__).resolve().parent
 RESULTS = ROOT / "results"
@@ -125,80 +131,198 @@ c2.metric("Matching filters", f"{len(view):,}")
 c3.metric("Documented pairs", int(ranked.is_documented.astype(bool).sum()))
 c4.metric("Design classes", ranked.design_class.nunique())
 
-tabs = st.tabs(["⭐ Start here", "Ranked pairs", "Pair detail", "By indication",
+tabs = st.tabs(["🔬 Try it", "Ranked pairs", "Pair detail", "By indication",
                 "Validation", "Figures", "Report"])
 
-# ----------------------------------------------------------------- story
+# ----------------------------------------------------------------- try it
 with tabs[0]:
-    st.markdown("### What problem is this solving?")
     st.markdown(
-        "A **bispecific antibody** is a drug with two arms. One arm grabs a **cancer cell**, "
-        "the other grabs a **T-cell** — physically dragging the immune system onto the tumour. "
-        "Several are approved drugs today.\n\n"
-        "The catch: about **3,000 human proteins** sit on the cell surface where an antibody "
-        "can reach them, which makes **millions of possible two-target combinations**. "
-        "Which pair deserves years of laboratory work?\n\n"
-        "Two requirements decide it, and they pull against each other:"
-    )
-    a, b = st.columns(2)
-    a.success("**It works** if both targets are on the tumour — ideally on the *same* tumour cell.")
-    b.error("**It is unsafe** if healthy tissue also carries both, because the drug attacks that too.")
-
-    for img, cap in [
-        ("story_pipeline.png", None),
-        ("story_same_cell.png",
-         "Averaged expression data cannot tell these two tumours apart — only "
-         "cell-by-cell measurement can, and it decides whether the antibody can physically work."),
-    ]:
-        p = FIGURES / img
-        if p.exists():
-            st.image(str(p), width='stretch')
-            if cap:
-                st.caption(cap)
-
-    st.markdown("---")
-    st.markdown("### Does it actually find real drugs?")
-    st.markdown(
-        "The honest test: hide nothing, and check whether the method rediscovers bispecifics "
-        "that already exist. **BCMA** is the clearest case — the target of *teclistamab*, an "
-        "approved myeloma drug."
-    )
-    m1, m2, m3 = st.columns(3)
-    m1.metric("BCMA in myeloma", "rank 1", "found without being told")
-    m2.metric("Present in myeloma samples", "100%", "vs ~0% in other cancers")
-    m3.metric("Healthy tissue carrying it", "plasma cells", "a lineage patients survive losing")
-    for img in ("story_example_tumour.png", "story_example_normal.png"):
-        p = FIGURES / img
-        if p.exists():
-            st.image(str(p), width='stretch')
-    st.markdown(
-        "That second chart is the whole argument. BCMA *does* have high expression in healthy "
-        "plasma cells — but plasma-cell depletion is survivable, so the drug is viable. "
-        "**A naive filter that just removed targets with high normal expression would have "
-        "thrown BCMA away.** Which lineage carries it matters more than how much."
+        "Two live tools. Each one runs the real analysis on click — nothing here is "
+        "pre-rendered."
     )
 
-    st.markdown("---")
-    st.markdown("### Did machine learning help?")
-    p = FIGURES / "story_scoreboard.png"
-    if p.exists():
-        st.image(str(p), width='stretch')
-    st.markdown(
-        "No — and reporting that is the point. Only **64 bispecific pairs** are publicly known, "
-        "and **48 of them share CD3** as one arm. That is not enough data to learn from: the "
-        "LightGBM model scored 0.57 on a fair test, and **0.43 — worse than guessing** — when "
-        "asked about a kind of pair it had never seen. The transparent rubric, whose weights are "
-        "written down and can be argued with, beat it."
-    )
-    st.info(
-        "**The idea that makes the method work:** the two arms of a bispecific are *not "
-        "interchangeable*. In a T-cell engager the tumour arm should be on the tumour, but the "
-        "CD3 arm is *meant* to be on T-cells and absent from it. An earlier version of this "
-        "project scored every pair the same way and came out **below chance (0.43)** — it was "
-        "penalising exactly the bispecifics that work in real medicine. Splitting the scoring "
-        "by design type fixed it."
-    )
+    # ---------- Tool 1: find targets for a cancer ----------
+    st.subheader("1 · Find the best targets for a cancer")
+    by_ind_all = load_csv("targets_by_indication.csv")
+    if by_ind_all.empty:
+        st.info("Run `python run.py` first.")
+    else:
+        c1, c2 = st.columns([3, 1])
+        cancer = c1.selectbox(
+            "Pick a cancer", sorted(by_ind_all.cancer_type.unique()),
+            index=sorted(by_ind_all.cancer_type.unique()).index("myeloma")
+            if "myeloma" in set(by_ind_all.cancer_type) else 0,
+            label_visibility="collapsed")
+        run1 = c2.button("Find targets", type="primary", width='stretch')
+
+        if run1:
+            uni = load_universe()
+            sub = by_ind_all[by_ind_all.cancer_type == cancer].sort_values("rank")
+            with st.status(f"Searching for targets in {cancer.replace('_', ' ')}…",
+                           expanded=True) as status:
+                st.write("Starting from **20,151 human genes**")
+                st.write(f"Keeping the **{len(uni):,}** an antibody can physically reach "
+                         "(on the cell surface)")
+                st.write(f"Checking which are on **{cancer.replace('_', ' ')}** tumour samples")
+                st.write("Checking all **154 healthy cell types** for safety risk")
+                status.update(label=f"Found {len(sub)} candidate targets", state="complete")
+
+            st.markdown(f"#### Top targets for {cancer.replace('_', ' ')}")
+            top = sub.head(8).iloc[::-1]
+            fig, ax = plt.subplots(figsize=(8, 0.46 * len(top) + 1.4))
+            colours = [GOOD if k else BLUE for k in top.in_known_bsab]
+            ax.barh(top.gene, top.tumour_positivity * 100, color=colours, height=0.62)
+            for y, (v, known) in enumerate(zip(top.tumour_positivity * 100, top.in_known_bsab)):
+                ax.text(v + 1.5, y, f"{v:.0f}%" + ("  ← known drug target" if known else ""),
+                        va="center", fontsize=9,
+                        color=GOOD if known else INK_2,
+                        fontweight="bold" if known else "normal")
+            ax.set_xlim(0, 125)
+            ax.set_xlabel("% of tumour samples carrying this target", fontsize=9, color=INK_2)
+            ax.set_title(f"What fraction of {cancer.replace('_', ' ')} carries each target",
+                         loc="left", fontsize=11, fontweight="bold")
+            ax.grid(axis="x", color=GRID, lw=0.8); ax.set_axisbelow(True)
+            ax.grid(axis="y", lw=0)
+            for sp in ("top", "right"):
+                ax.spines[sp].set_visible(False)
+            st.pyplot(fig, clear_figure=True)
+
+            hits = sub[sub.in_known_bsab]
+            if len(hits):
+                st.success(
+                    f"**Sanity check passed.** {', '.join(hits.gene)} "
+                    f"{'is' if len(hits) == 1 else 'are'} already used in real bispecific "
+                    f"drugs for this cancer — the method found "
+                    f"{'it' if len(hits) == 1 else 'them'} without being told."
+                )
+            else:
+                st.warning(
+                    "No known bispecific target appears in this shortlist. Either none exists "
+                    "for this cancer, or the method missed it — worth checking before trusting "
+                    "the novel suggestions here."
+                )
+            show_cols = ["rank", "gene", "tumour_positivity", "normal_peak_ncpm",
+                         "normal_peak_cell_type", "surface_confidence", "in_known_bsab"]
+            st.dataframe(sub[[c for c in show_cols if c in sub.columns]].head(15),
+                         hide_index=True, width='stretch')
+
+    st.divider()
+
+    # ---------- Tool 2: test any pair ----------
+    st.subheader("2 · Test any two targets as a pair")
+    st.caption("Pick two proteins and see whether they would work together, and what "
+               "healthy tissue they would damage.")
+
+    feats, uni, normal_raw = load_features(), load_universe(), load_normal()
+    if feats.empty or uni.empty:
+        st.info("Cached feature tables not found — run `python run.py`.")
+    else:
+        genes = sorted(set(feats.gene_a) | set(feats.gene_b))
+        d1, d2, d3 = st.columns([2, 2, 1])
+        default_a = genes.index("TNFRSF17") if "TNFRSF17" in genes else 0
+        default_b = genes.index("CD3E") if "CD3E" in genes else 1
+        ga = d1.selectbox("Target 1", genes, index=default_a)
+        gb = d2.selectbox("Target 2", genes, index=default_b)
+        run2 = d3.button("Analyse pair", type="primary", width='stretch')
+
+        if run2:
+            key = "|".join(sorted((ga, gb)))
+            row = feats[feats.pair == key]
+            if ga == gb:
+                st.error("Pick two different targets.")
+            elif row.empty:
+                st.warning(
+                    f"**{ga} × {gb}** is not in the scored pair space. The space covers every "
+                    "tumour-antigen × immune-anchor pair plus the most prevalent "
+                    "antigen × antigen pairs, so this combination was never a candidate."
+                )
+            else:
+                row = row.iloc[0]
+                srow = ranked[ranked.pair == key]
+                sc_all = load_scored()
+                hit = sc_all[sc_all.pair == key] if not sc_all.empty else pd.DataFrame()
+
+                with st.status(f"Analysing {ga} × {gb}…", expanded=True) as status:
+                    st.write("Measuring co-expression across **47,061 single tumour cells**")
+                    st.write("Checking **1,206 cancer cell lines**")
+                    st.write("Scanning **154 healthy cell types** for safety risk")
+                    status.update(label="Analysis complete", state="complete")
+
+                pboth = row.get("sc_pboth_max")
+                lift = row.get("sc_lift_max")
+                vital_n = row.get("normal_double_pos_vital_n")
+                k1, k2, k3 = st.columns(3)
+                k1.metric("Tumour cells carrying BOTH",
+                          "—" if pd.isna(pboth) else f"{100 * float(pboth):.1f}%")
+                k2.metric("Same-cell coincidence",
+                          "—" if pd.isna(lift) else f"{float(lift):.1f}×",
+                          help="Above 1 means the two targets occupy the same cells more "
+                               "than chance would give.")
+                k3.metric("Dose-limiting tissues at risk",
+                          "—" if pd.isna(vital_n) else f"{int(vital_n)}",
+                          help="Healthy cell types whose loss would be dangerous, which "
+                               "carry both targets.")
+
+                if not srow.empty:
+                    s = srow.iloc[0]
+                    if bool(s.is_documented):
+                        st.success(f"**This is a real bispecific.** It appears in the "
+                                   f"reference list of 64 documented pairs, ranked "
+                                   f"#{int(s.rank_in_class)} within {s.design_class}.")
+                    else:
+                        st.info(f"**Score {float(s.score):.3f}** — rank "
+                                f"#{int(s.rank_in_class):,} of its "
+                                f"{s.design_class} class. Not a documented bispecific.")
+
+                # Which healthy tissue would be hit
+                st.markdown("##### Healthy tissue carrying both targets")
+                from bsab import explain as _explain
+
+                nrm = normal_raw.reindex(list(uni.gene)).fillna(0.0)
+                shared = _explain.top_shared_normal_cell_types(ga, gb, nrm, n=6)
+                if not shared:
+                    st.success("No healthy cell type carries both appreciably — the safest case.")
+                else:
+                    sh = pd.DataFrame(shared, columns=["cell type", ga, gb])
+                    sh["risk (lower of the two)"] = sh[[ga, gb]].min(axis=1).round(0)
+                    vital = set(C_VITAL)
+                    fig, ax = plt.subplots(figsize=(8, 0.44 * len(sh) + 1.3))
+                    rk = sh["risk (lower of the two)"].to_numpy()[::-1]
+                    names = sh["cell type"].to_numpy()[::-1]
+                    colours = [CRITICAL if n in vital else ORANGE for n in names]
+                    ax.barh(names, rk, color=colours, height=0.6)
+                    for y, v in enumerate(rk):
+                        ax.text(v + max(rk) * 0.02 + 0.4, y, f"{v:,.0f}", va="center",
+                                fontsize=9, color=INK_2)
+                    ax.set_xlim(0, max(max(rk) * 1.2, 1))
+                    ax.set_xlabel("exposure = the LOWER of the two targets (nCPM)",
+                                  fontsize=9, color=INK_2)
+                    ax.set_title("A dual-targeting drug only hits a tissue that has BOTH",
+                                 loc="left", fontsize=10.5, fontweight="bold")
+                    ax.grid(axis="x", color=GRID, lw=0.8); ax.set_axisbelow(True)
+                    ax.grid(axis="y", lw=0)
+                    for sp in ("top", "right"):
+                        ax.spines[sp].set_visible(False)
+                    st.pyplot(fig, clear_figure=True)
+                    st.caption(
+                        "Red = a lineage whose loss is dose-limiting. This is the key idea: "
+                        "because the drug needs **both** targets, the damage in a tissue is "
+                        "set by whichever target is **lower** there — so pairing can make an "
+                        "otherwise unusable target safe."
+                    )
+                    st.dataframe(sh, hide_index=True, width='stretch')
+
+                if not hit.empty:
+                    ev = _explain.pair_evidence(
+                        row, uni, nrm,
+                        pd.concat([srow.iloc[0].drop(labels=[c for c in srow.columns
+                                                             if c in hit.columns]),
+                                   hit.iloc[0]]) if not srow.empty else hit.iloc[0])
+                    with st.expander("Full written explanation"):
+                        st.code(_explain.render_text(ev), language=None)
+
     st.caption(CAVEAT)
+
 
 # ----------------------------------------------------------------- ranked
 with tabs[1]:
